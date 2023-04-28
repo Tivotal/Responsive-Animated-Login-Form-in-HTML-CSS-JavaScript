@@ -1,0 +1,230 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+.wave {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  z-index: -1;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7rem;
+  padding: 0 2rem;
+}
+
+.container .img {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.container .img img {
+  width: 500px;
+}
+
+.container .content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.container .content form {
+  width: 360px;
+}
+
+.container .content form img {
+  height: 100px;
+}
+
+.container .content form .title {
+  margin: 15px 0;
+  color: #333;
+  font-size: 2.9rem;
+  text-transform: uppercase;
+}
+
+.container .content form .inputbox {
+  position: relative;
+  display: grid;
+  grid-template-columns: 7% 93%;
+  margin: 25px 0;
+  padding: 5px 0;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.container .content form .inputbox.name {
+  margin-top: 0;
+}
+
+.container .content form .inputbox .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d9d9d9;
+}
+
+.container .content form .inputbox .icon i {
+  transition: 0.3s;
+}
+
+.container .content form .inputbox.active .icon i {
+  color: #38d39f;
+}
+
+.container .content form .inputbox div {
+  position: relative;
+  height: 45px;
+}
+
+.container .content form .inputbox div h5 {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #999;
+  transition: 0.3s;
+}
+
+.container .content form .inputbox.active div h5 {
+  font-size: 15px;
+  top: -5px;
+}
+
+.container .content form .inputbox .input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0.5rem 0.7rem;
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.container .content form .inputbox.pass {
+  margin-bottom: 4px;
+}
+
+.container .content form .inputbox::before,
+.container .content form .inputbox::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0%;
+  background: #38d39f;
+  bottom: -2px;
+  transition: 0.3s;
+}
+
+.container .content form .inputbox::before {
+  right: 50%;
+}
+
+.container .content form .inputbox::after {
+  left: 50%;
+}
+
+.container .content form .inputbox.active:after,
+.container .content form .inputbox.active:before {
+  width: 50%;
+}
+
+.container .content form a {
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  color: #999;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+.container .content form a:hover {
+  color: #38d39f;
+}
+
+.container .content form .btn {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: linear-gradient(to right, #32d39f, #32be8f);
+  background-size: 200%;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.container .content form .btn:hover {
+  background-position: right;
+}
+
+@media (max-width: 1050px) {
+  .container {
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container .content form {
+    width: 290px;
+  }
+
+  .container .content form .title {
+    font-size: 2.4rem;
+    margin: 8px 0;
+  }
+
+  .container .img img {
+    width: 400px;
+  }
+
+  .wave {
+    width: 900px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .container .img {
+    display: none;
+  }
+
+  .wave {
+    display: none;
+  }
+
+  .container .content {
+    justify-content: center;
+  }
+}
